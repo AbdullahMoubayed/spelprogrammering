@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1 class='Title'>Fox hunt</h1>
+
+  <div class="layer">
+    <script src="https://koda.nu/simple.js">
+      let x = 350;
+      let y = 350;
+      let xm = 500;
+      let xy = 500;
+      let time = 30000;
+
+      function message() {
+        alert('You great hunter!');
+
+        window.location.reload();
+      }
+      
+      function update() {
+        clearScreen();
+
+        xm = mouse.x;
+        ym = mouse.y;
+
+        circle(xm, ym, 40, 'rgb(252, 123, 3)');
+        circle(x, y, 40, 'rgb(79, 42, 7)');
+        
+        if (keyboard.a) {
+          x -= 35;
+        } else if (keyboard.d) {
+          x += 35;
+        } else if (keyboard.w) {
+          y -= 35;
+        } else if (keyboard.s) {
+          y += 35;
+        }
+
+        if ((xm == x && ym == y) || ((x <= xm+60 && x >= xm-60) && (y <= ym+60 && y >= ym-60))) {
+          alert('fast as f!ck boi!');
+          window.location.reload();
+        }
+
+        setTimeout(message, time);
+        
+      }
+
+
+
+
+      </script>
+  </div>
+  
+</body>
+</html>
