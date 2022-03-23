@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <img src="bg.jpg" alt="">
 
   <h1 class='Title'>Fox hunt</h1>
 
@@ -20,8 +21,14 @@
       let time = 30000;
 
       function message() {
-        alert('You great hunter!');
+        // alert('You great hunter!');
+        text(50, 50, 40, 'good luck next time!', 'orange');
+        stopUpdate();
 
+        setTimeout(refrech, 5000);
+      }
+
+      function refrech() {
         window.location.reload();
       }
       
@@ -36,17 +43,20 @@
         
         if (keyboard.a) {
           x -= 35;
-        } else if (keyboard.d) {
+        } if (keyboard.d) {
           x += 35;
-        } else if (keyboard.w) {
+        } if (keyboard.w) {
           y -= 35;
-        } else if (keyboard.s) {
+        } if (keyboard.s) {
           y += 35;
         }
 
         if ((xm == x && ym == y) || ((x <= xm+60 && x >= xm-60) && (y <= ym+60 && y >= ym-60))) {
-          alert('fast as f!ck boi!');
-          window.location.reload();
+          // alert('fast as f!ck boi!');
+          text(50, 50, 40, 'You greet huntr!', 'orange');
+          stopUpdate();
+
+          setTimeout(refrech, 2000);
         }
 
         setTimeout(message, time);
